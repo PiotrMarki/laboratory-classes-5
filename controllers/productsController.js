@@ -1,11 +1,11 @@
 const Product = require("../models/Product");
-const Cart = require("../models/cart"); // Import modelu Cart
+const Cart = require("../models/cart"); 
 const { MENU_LINKS } = require("../constants/navigation");
 const { STATUS_CODE } = require("../constants/statusCode");
 
 exports.getProductsView = (request, response) => {
   const products = Product.getAll();
-  const cartCount = Cart.getProductsQuantity(); // Oblicz ilość elementów w koszyku
+  const cartCount = Cart.getProductsQuantity(); 
 
   response.render("products.ejs", {
     headTitle: "Shop - Products",
@@ -13,7 +13,7 @@ exports.getProductsView = (request, response) => {
     menuLinks: MENU_LINKS,
     activeLinkPath: "/products",
     products,
-    cartCount, // Przekaż ilość elementów do widoku
+    cartCount, 
   });
 };
 

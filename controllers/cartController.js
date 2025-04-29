@@ -12,9 +12,9 @@ exports.addProductToCart = (request, response) => {
 
   try {
     Cart.add(name, quantity);
-    response.status(201).redirect("/products/new"); // Zamiast STATUS_CODE.CREATED
+    response.status(201).redirect("/products/new"); 
   } catch (error) {
-    response.status(400).json({ error: error.message }); // Zamiast STATUS_CODE.BAD_REQUEST
+    response.status(400).json({ error: error.message }); 
   }
 };
 
